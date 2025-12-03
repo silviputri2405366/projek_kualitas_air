@@ -1,0 +1,31 @@
+int main() {
+    int jumlahParameter = 3;
+
+    // Membuat array dinamis
+    int *karakteristik = new int[jumlahParameter];
+
+    cout << "PROGRAM ANALISIS KUALITAS AIR\n";
+    cout << "-----------------------------------\n";
+
+    // Input warna air
+    cout << "Masukkan warna air (0=sangat jernih, 1=agak keruh, 2=keruh, 3=coklat/kotor): ";
+    cin >> karakteristik[0];
+
+    // Input bau air
+    cout << "Masukkan bau air   (0=tidak berbau, 1=sedikit bau, 2=bau menyengat): ";
+    cin >> karakteristik[1];
+
+    // Input partikel
+    cout << "Masukkan partikel  (0=tidak ada, 1=sedikit, 2=banyak): ";
+    cin >> karakteristik[2];
+
+    // Memanggil fungsi analisis
+    string hasil = analisisKualitas(karakteristik);
+
+    cout << "\nStatus kualitas air: " << hasil << endl;
+
+    // Membersihkan memori
+    delete[] karakteristik;
+
+    return 0;
+}
